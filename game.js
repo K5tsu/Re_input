@@ -12,10 +12,16 @@ window.addEventListener('keydown', function (e) {
                 console.log("Now to the basics");
             }, 1000);
             setTimeout(function () {
-                console.log("Press i to see your stats.");
+                console.log("Press # to choose your ability and progress.");
             }, 1000);
             setTimeout(function () {
-                console.log("Press # to choose your ability and progress.");
+                console.log("Press / to see current directories.");
+            }, 1000);
+            setTimeout(function () {
+                console.log("Press + to access directories.");
+            }, 1000);
+            setTimeout(function () {
+                console.log("Press i to see your stats");
             }, 1000);
             setTimeout(function () {
                 console.log("1 is for replication which gives +3 ATK, 2 is for Daemon which gives +3 TRK, and 3 is for complexity which gives +3 DEF.");
