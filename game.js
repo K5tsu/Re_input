@@ -1,11 +1,8 @@
 console.log("Hello Mortal")
 console.log("You are stuck in a computer with no way to get out")
 console.log("I, your cool savior is gonna give you a cool power cus yes")
-alert("press * to start")
 let stats = {}
-window.addEventListener('keydown', function (e) {
-    switch (e.key) {
-        case '*':
+(function () {
             const characterName = prompt("What's your name buddy?");
             console.log(`Good luck ${characterName}.exe, I believe in you!`);
             setTimeout(function () {
@@ -48,17 +45,15 @@ window.addEventListener('keydown', function (e) {
                         });
                 }
             })
-    }
-});
+}());
 let dirs = {
     1: 'Home',
     2: 'Root',
     3: 'Lib'
 };
-let curdir = $q
 window.addEventListener('keydown', function (e) {
     switch (e.key) {
-        case '/':
+        case '.':
             const ans = prompt("would you like to see the directories you have access to?")
             if (ans == 'y' && 'yes') {
                 console.log("the dirs you currently have access to:")
@@ -68,18 +63,18 @@ window.addEventListener('keydown', function (e) {
                         case '+':
                 let q = prompt("which one would you like to explore?")
                 if (q == 1) {
-                console.log("You are currently in /Home")
+                console.log(`You are currently in ${dirs['1']}`)
                 }
                 else if (q == 2) {
-                    console.log("You are currently in /Root")
+                    console.log(`You are currently in ${dirs['2']}`)
                 }
                 else if (q == 3) {
-                    console.log("You are currently in /Lib")
+                    console.log(`You are currently in ${dirs['3']}`)
                 }
                 else {
-                    console.log("this directory doesnt exist")
+                    console.log(`this directory doesnt exist`)
                 }
-                let curdir = console.log($q)
+                let curdir = (q)
                     }
                 });
                 
