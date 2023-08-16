@@ -4,15 +4,15 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-console.log("Hello Mortal");
-console.log("You are stuck in a computer with no way to get out");
-console.log("I, your cool savior, am gonna give you a cool power because yes");
+console.log("Hello Grunt");
+console.log("You Pissed of a couple hundred gangs and you're screwed");
+console.log("I, your cool savior, am gonna give you the power to fight back because yes");
 
 let stats = {};
 
 (function () {
-    rl.question("What's your name buddy? ", (characterName) => {
-        console.log(`Good luck ${characterName}.exe, I believe in you!`);
+    rl.question("What's your name buddy? ", (characterName), (characterLName) => {
+        console.log(`Good luck ${characterName} ${characterLName}, I believe in you!`);
         setTimeout(function () {
             console.log("Now to the basics");
         }, 1000);
