@@ -46,11 +46,11 @@ rl.on('line', (input) => {
         case '#':
             rl.question("Choose your starter ability (you can obtain more later). ", (ability) => {
                 if (ability === "1") {
-                    stats = { Atk: 5, Def: 4, Trk: 5, DC: 5, G: 5 };
+                    stats = { Atk: 5, Def: 4, Trk: 5, DC: 5, G: 10000000 };
                 } else if (ability === "2") {
-                    stats = { Atk: 2, Def: 4, Trk: 8, DC: 5, G: 5 };
+                    stats = { Atk: 2, Def: 4, Trk: 8, DC: 5, G: 55555555 };
                 } else if (ability === "3") {
-                    stats = { Atk: 2, Def: 7, Trk: 5, DC: 5, G: 5 };
+                    stats = { Atk: 2, Def: 7, Trk: 5, DC: 5, G: 55555555 };
                 }
                 rl.on('line', (input) => {
                     if (input === 'i') {
@@ -108,6 +108,24 @@ function Gamble() {
             stats.DC = 999;
         }
     }
+    else if (randAbility <= 1) {
+        console.log("You got coin flip!")
+        //add a mechanic for 50/50 oneshots
+    }
+    else if (randAbility <= 10) {
+        console.log("you got Sureshot!")
+        //add a mechanic for not missing
+    }
+    else if (randAbility <= 50) {
+        console.log("you got meat sac!")
+        stats.Def += 10
+    }
+    else if (randAbility <= 90) {
+        console.log("you got tryer!")
+        stats.Atk += 5
+        stats.Def += 5
+        stats.Trk += 5
+    }
 }
 
 rl.on('line', (input) => {
@@ -130,7 +148,7 @@ rl.on('line', (input) => {
                             if (choice === 1){
                                 console.log("Vendors of the market:");
                                 console.log("choose your vendor:")
-                                console.log("Gambler", "Armsmith", "Pharmacist");
+                                console.log("1. Gambler\n2. Armsmith\n3. Pharmacist");
                                 rl.on('line', (input) => {
                                     if (input === "Gambler" || input === "gambler") {
                                         console.log("Hey there kiddo, wanna try your luck?");
@@ -143,8 +161,6 @@ rl.on('line', (input) => {
                                                 }
                                                 else {
                                                     console.log("you aint got enough buddy")
-                                                    return stats.G
-                                                    rl.close();
                                                 }
                                             }
                                         });
