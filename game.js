@@ -46,11 +46,11 @@ rl.on('line', (input) => {
         case '#':
             rl.question("Choose your starter ability (you can obtain more later). ", (ability) => {
                 if (ability === "1") {
-                    stats = { Atk: 5, Def: 4, Trk: 5, DC: 5, G: 10000000 };
+                    stats = { Atk: 5, Def: 4, Trk: 5, DC: 5, EXP:0 , LVL:1,G: 5 };
                 } else if (ability === "2") {
-                    stats = { Atk: 2, Def: 4, Trk: 8, DC: 5, G: 55555555 };
+                    stats = { Atk: 2, Def: 4, Trk: 8, DC: 5, EXP:0, LVL:1,G: 5 };
                 } else if (ability === "3") {
-                    stats = { Atk: 2, Def: 7, Trk: 5, DC: 5, G: 55555555 };
+                    stats = { Atk: 2, Def: 7, Trk: 5, DC: 5, EXP:0, LVL:1,G: 5 };
                 }
                 rl.on('line', (input) => {
                     if (input === 'i') {
@@ -81,6 +81,29 @@ let rates = {
     50: "Meat sac",
     90: "Tryer"
 }
+function battleSeq() {
+    console.log("You've encountered ..."); //<----->insert enemy
+    console.log("You can only leave if you beat em :D.");
+    abattleSeq();
+}
+
+function abattleSeq() {
+    rl.question("Make your move: ", (response) => {
+        if (response.toLowerCase() === 'exit') {
+            console.log("You can't leave until you've completed the task.");
+            abattleSeq();
+        } else {
+            if (response.toLowerCase() === 'complete task') {
+                console.log("Congratulations! You've completed the task. You can now leave.");
+                rl.close();
+            } else {
+                console.log("That's not the correct response. Keep trying!");
+                abattleSeq();
+            }
+        }
+    });
+}
+
 
 function Gamble() {
     let randAbility = Math.random();
@@ -176,7 +199,7 @@ rl.on('line', (input) => {
                                         console.log("you have encountered a low level yakuza!")
                                         rl.question("will you brave this threat?");
                                         if (input == 'y' && 'yes') {
-
+                                           
                                         } 
                                   }  
                                 })
