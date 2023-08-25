@@ -1,9 +1,0 @@
-//ENDGAME gon give you a reality check fr
-0.001: "Total Violence" -> 999 on all stats, you dont miss
-    0.01: "Pressure", -> 999 on attack
-    0.1: "Flesh control" -> 999 on defense
-    0.1: "Game addict" -> the enemy will always miss
-    1: "Coin flip" -> there's a 50% percent chance to one shot your opponent on every move
-    10: "Sureshot" -> you dont miss
-    50: "Meat sac" -> 10 points to defense
-    90: "Tryer" -> 5 points on every stat

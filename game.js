@@ -87,24 +87,6 @@ function battleSeq() {
     abattleSeq();
 }
 
-function abattleSeq() {
-    rl.question("Make your move: ", (response) => {
-        if (response.toLowerCase() === 'exit') {
-            console.log("You can't leave until you've completed the task.");
-            abattleSeq();
-        } else {
-            if (response.toLowerCase() === 'complete task') {
-                console.log("Congratulations! You've completed the task. You can now leave.");
-                rl.close();
-            } else {
-                console.log("That's not the correct response. Keep trying!");
-                abattleSeq();
-            }
-        }
-    });
-}
-
-
 function Gamble() {
     let randAbility = Math.random();
 
