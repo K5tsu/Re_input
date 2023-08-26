@@ -131,8 +131,12 @@ function Gamble() {
         stats.Def += 5
         stats.Trk += 5
     }
-}
 
+}
+function mobs1() {
+    const alleyMobs = ["Yakuza", "Fixer", "Addict", "Deliquent"];
+    const index = Math.floor(Math.random() * alleyMobs.length);
+}
 rl.on('line', (input) => {
     if (input === '/') {
         rl.question("Would you like to see the locations you have access to? (y/n) ", (ans) => {
@@ -174,11 +178,11 @@ rl.on('line', (input) => {
                             }
                             //enemy encounter wip
                             else if (choice === 2) {
-                                let enChance = math.random();
+                                let enChance = Math.random();
                                 (function () {
                                     enChance
-                                    if (enChance <= 40) {
-                                        console.log("you have encountered a low level yakuza!")
+                                    if (enChance <= 0) {
+                                        console.log(`you have encountered a ${alleyMobs[index]}!`)
                                         rl.question("will you brave this threat?");
                                         if (input == 'y' && 'yes') {
                                            
