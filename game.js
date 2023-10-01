@@ -71,6 +71,15 @@ let dirs = {
     3: 'Downtown'
 };
 
+let weapons = {
+    5: "Knucklebuster",
+    1: "School Tie",
+    5: "Knife",
+    10: "Metal Bat",
+    8: "Metal Chain",
+    4: "Wooden Katana"
+}
+
 let rates = {
     0.001: "Total Violence",
     0.01: "Pressure",
@@ -120,6 +129,7 @@ function Gamble() {
     else if (randAbility <= 10) {
         console.log("you got Sureshot!")
         //add a mechanic for not missing
+        // also gotta add missing ofc
     }
     else if (randAbility <= 50) {
         console.log("you got meat sac!")
@@ -133,6 +143,13 @@ function Gamble() {
     }
 
 }
+//will prob remove at some point
+function mobs() {
+let Yakuza = { Hp: 30, Atk: 7, Trk: 2 };
+let Fixer = { Hp: 60, Atk: 14, Trk: 4 };
+let Addict = { Hp: 120, Atk: 28, Trk: 8 };
+let Deliquent = { Hp: 240, Atk: 56, Trk: 16};
+}
 function mobs1() {
     const alleyMobs = ["Yakuza", "Fixer", "Addict", "Deliquent"];
     const index = Math.floor(Math.random() * alleyMobs.length);
@@ -141,7 +158,7 @@ rl.on('line', (input) => {
     if (input === '/') {
         rl.question("Would you like to see the locations you have access to? (y/n) ", (ans) => {
             if (ans === 'y' || ans === 'yes') {
-                console.log("The dirs you currently have access to:");
+                console.log("The places you currently have access to:");
                 console.log(dirs);
 
                 rl.on('line', (input) => {
@@ -160,9 +177,9 @@ rl.on('line', (input) => {
                                 console.log("1. Gambler\n2. Armsmith\n3. Pharmacist");
                                 rl.on('line', (input) => {
                                     if (input === "Gambler" || input === "gambler") {
-                                        console.log("Hey there kiddo, wanna try your luck?");
+                                        console.log("Hey there kiddo, try your luck");
                                         console.log(rates);
-                                        rl.question("wanna have a go? ", (ans) => {
+                                        rl.question("wanna have a go?(y/n) ", (ans) => {
                                             if (ans === "y") {
                                                 if (stats.G >= 5) {
                                                 stats.G -= 5;
@@ -173,6 +190,67 @@ rl.on('line', (input) => {
                                                 }
                                             }
                                         });
+                                    }
+                                    //make a way of equipping cus rn bro just takes your money...
+                                    if (input === "Armsmith" || input === "armsmith") { 
+                                        console.log("Welcome to the destruction extraordinaire!");
+                                        setTimeout(function () { 
+                                            rl.question("Wanna see the rates?(y/n) ", (ans1) => {
+                                                if (ans1 === "y") {
+                                                    console.log(weapons);
+                                                    rl.on('line', (input) => {
+                                                        if (input === "School Tie" || "school tie") {
+                                                            if (stats.G >= 1) {
+                                                                stats.G -= 1;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Wooden Katana" || "wooden katana") {
+                                                            if (stats.G >= 4) {
+                                                                stats.G -= 4;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Knife" || "knife") {
+                                                            if (stats.G >= 5) {
+                                                                stats.G -= 5;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Metal Chain" || "metal chain") {
+                                                            if (stats.G >= 8) {
+                                                                stats.G -= 8;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Metal Bat" || "metal bat") {
+                                                            if (stats.G >= 10) {
+                                                                stats.G -= 10;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else {
+                                                            console.log("I dont know that one buddy...")
+                                                        }
+                                                    })
+                                                }
+                                            })
+                                        }, 1000);
                                     }
                                 });
                             }
@@ -185,6 +263,7 @@ rl.on('line', (input) => {
                                         console.log(`you have encountered a ${alleyMobs[index]}!`)
                                         rl.question("will you brave this threat?");
                                         if (input == 'y' && 'yes') {
+                                            console.log("Let blood spill!");
                                            
                                         } 
                                   }  
@@ -193,6 +272,11 @@ rl.on('line', (input) => {
                         });
                     }
                 });
+            }
+        });
+    }
+});
+
             }
         });
     }
