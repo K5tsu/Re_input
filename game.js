@@ -71,6 +71,16 @@ let dirs = {
     3: 'Downtown'
 };
 
+
+let weapons = {
+    5: "Knucklebuster",
+    1: "School Tie",
+    5: "Knife",
+    10: "Metal Bat",
+    8: "Metal Chain",
+    4: "Wooden Katana"
+};
+
 let rates = {
     0.001: "Total Violence",
     0.01: "Pressure",
@@ -81,6 +91,11 @@ let rates = {
     50: "Meat sac",
     90: "Tryer"
 }
+
+let recipes = {
+    Godslayer : "Katana + Chain + Reckless Animosity"
+}
+
 function battleSeq() {
     console.log("You've encountered ..."); //<----->insert enemy
     console.log("You can only leave if you beat em :D.");
@@ -173,6 +188,75 @@ rl.on('line', (input) => {
                                                 }
                                             }
                                         });
+                                    }
+                                    //make a way of equipping cus rn bro just takes your money...
+                                    if (input === "Armsmith" || input === "armsmith") { 
+                                        console.log("Welcome to the destruction extraordinaire!");
+                                        setTimeout(function () { 
+                                            rl.question("Wanna see the rates?(y/n) ", (ans1) => {
+                                                if (ans1 === "y") {
+                                                    console.log(weapons);
+                                                    rl.on('line', (input) => {
+                                                        if (input === "School Tie" || "school tie") {
+                                                            if (stats.G >= 1) {
+                                                                stats.G -= 1;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Wooden Katana" || "wooden katana") {
+                                                            if (stats.G >= 4) {
+                                                                stats.G -= 4;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Knife" || "knife") {
+                                                            if (stats.G >= 5) {
+                                                                stats.G -= 5;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Metal Chain" || "metal chain") {
+                                                            if (stats.G >= 8) {
+                                                                stats.G -= 8;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else if (input === "Metal Bat" || "metal bat") {
+                                                            if (stats.G >= 10) {
+                                                                stats.G -= 10;
+                                                                console.log("Pleasure doing business!")
+                                                            }
+                                                            else {
+                                                                console.log("Make your own weapons!")
+                                                            }
+                                                        }
+                                                        else {
+                                                            console.log("I dont know that one buddy...")
+                                                        }
+                                                    })
+                                                }
+                                                else if (ans1 === "n") { 
+                                                    rl.question("wanna do some crafting?(y/n) ", (ans2) => { 
+                                                        if (ans2 === "y") {
+                                                            console.log("Here's what you can make:")
+                                                            console.log(recipes)
+                                                        }
+                                                    })
+                                                }
+                                            })
+                                        }, 1000);
                                     }
                                 });
                             }
