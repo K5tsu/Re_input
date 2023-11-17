@@ -149,10 +149,11 @@ function Gamble() {
     }
 
 }
-function mobs1() {
-    const alleyMobs = ["Yakuza", "Fixer", "Addict", "Deliquent"];
-    const index = Math.floor(Math.random() * alleyMobs.length);
-}
+let yakuza1 = { Atk: 10, Def: 20, Trk: 15 };
+let deliquent = { Atk: 6, Def: 4, Trk: 13 };
+let addict = { Atk: 3, Def: 6, Trk: 9 };
+let fixer = { Atk: 20, Def: 25, Trk: 20 };
+
 rl.on('line', (input) => {
     if (input === '/') {
         rl.question("Would you like to see the locations you have access to? (y/n) ", (ans) => {
