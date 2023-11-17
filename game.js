@@ -10,6 +10,7 @@ console.log("I, your cool savior, am gonna give you the power to fight back beca
 
 let stats = {};
 let abilities = {};
+let weaponsH = {};
 
 (async function () {
     const characterName = await new Promise((resolve) => {
@@ -252,6 +253,11 @@ rl.on('line', (input) => {
                                                         if (ans2 === "y") {
                                                             console.log("Here's what you can make:")
                                                             console.log(recipes)
+                                                            rl.on('line', (input) => { 
+                                                                if (input === "Godslayer" || "godslayer") {
+                                                                    //checking for the needed items in inventory
+                                                                }
+                                                            })
                                                         }
                                                     })
                                                 }

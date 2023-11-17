@@ -2,6 +2,7 @@
 1. finish the battle sequence ( ͡° ͜ʖ ͡°)
 2. finish the mechanics for the other abilities
 3. add more areas
+4. Inventory system
 
 //Bosses and mobs
 {Reggie, The true gambler}
